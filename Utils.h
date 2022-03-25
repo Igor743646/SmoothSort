@@ -11,6 +11,14 @@ std::ostream& operator<<(std::ostream& out, const std::vector<T>& v) {
     return out;
 }
 
+template<class T, size_t S>
+std::ostream& operator<<(std::ostream& out, const std::array<T, S>& v) {
+    for (auto& a : v) {
+        out << a << " ";
+    }
+    return out;
+}
+
 template<class T, class K>
 std::ostream& operator<<(std::ostream& out, const std::unordered_map<T, K>& v) {
     for (auto& [key, val] : v) {
